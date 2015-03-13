@@ -3,14 +3,10 @@ var main = function () {
 
     var insertIntoDOM = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").text("Choose a weapon above to start the game!");
     };
 
     $.getJSON("/results.json", insertIntoDOM);
-
-    //will want to separate these into their own functions accesible by the
-    //onclick form method, then update the DOM again with the new object
-    //$.post("/play/rock", insertIntoDOM, 'json');
 };
 
 $(document).ready(main);
@@ -18,7 +14,7 @@ $(document).ready(main);
 function rock () {
     var insertRock = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").html("You chose: " + obj.choice + "<br>AI Chose: " + obj.aichoice + "<br><br>Outcome: " + obj.outcome + "<br><br>Wins: " + obj.wins + "<br>Losses: " + obj.losses + "<br>Ties: " + obj.ties);
     };
 
     $.post("/play/rock", insertRock, 'json');
@@ -27,7 +23,7 @@ function rock () {
 function paper () {
     var insertPaper = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").html("You chose: " + obj.choice + "<br>AI Chose: " + obj.aichoice + "<br><br>Outcome: " + obj.outcome + "<br><br>Wins: " + obj.wins + "<br>Losses: " + obj.losses + "<br>Ties: " + obj.ties);
     };
 
     $.post("/play/paper", insertPaper, 'json');
@@ -36,7 +32,7 @@ function paper () {
 function scissors () {
     var insertScissors = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").html("You chose: " + obj.choice + "<br>AI Chose: " + obj.aichoice + "<br><br>Outcome: " + obj.outcome + "<br><br>Wins: " + obj.wins + "<br>Losses: " + obj.losses + "<br>Ties: " + obj.ties);
     };
 
     $.post("/play/scissors", insertScissors, 'json');
@@ -45,7 +41,7 @@ function scissors () {
 function lizard () {
     var insertLizard = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").html("You chose: " + obj.choice + "<br>AI Chose: " + obj.aichoice + "<br><br>Outcome: " + obj.outcome + "<br><br>Wins: " + obj.wins + "<br>Losses: " + obj.losses + "<br>Ties: " + obj.ties);
     };
 
     $.post("/play/lizard", insertLizard, 'json');
@@ -54,7 +50,7 @@ function lizard () {
 function spock () {
     var insertSpock = function (myJson) {
         var obj = JSON.parse(myJson)
-        $("p").text("Outcome: " + obj.outcome + ", Wins: " + obj.wins + ", Losses: " + obj.losses + ", Ties: " + obj.ties);
+        $("p").html("You chose: " + obj.choice + "<br>AI Chose: " + obj.aichoice + "<br><br>Outcome: " + obj.outcome + "<br><br>Wins: " + obj.wins + "<br>Losses: " + obj.losses + "<br>Ties: " + obj.ties);
     };
 
     $.post("/play/spock", insertSpock, 'json');

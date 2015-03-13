@@ -14,8 +14,6 @@ http.createServer(app).listen(3000);
 
 app.get("/results.json", function (req, res) {
 	res.json(myJson);
-	console.log("this ran");
-	console.log(myJson);
 });
 
 app.post("/play/rock", function (req, res) {
@@ -143,5 +141,5 @@ function playGame() {
         }
     }
     
-	myJson = '{"outcome": ' + outcome + ', "wins": "' + wins + '", "losses": "' + losses + '", "ties": "' + ties + '"}';	
+	myJson = '{"choice": "' + choice + '", "aichoice": "' + aiChoice + '", "outcome": ' + outcome + ', "wins": "' + wins + '", "losses": "' + losses + '", "ties": "' + ties + '"}';	
 };
