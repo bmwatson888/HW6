@@ -16,50 +16,15 @@ app.get("/results.json", function (req, res) {
 	res.json(myJson);
 });
 
-app.post("/play/rock", function (req, res) {
+app.post("/play/:move", function (req, res) {
 	//we got a rock post, so run the function that plays the game
-	choice = "rock";
+	choice = req.params.move;
 	playGame();
 	//once done, return the JSON object back to the page
 	res.json(myJson);
-	console.log("rock chosen");
+	console.log("move chosen");
 });
 
-app.post("/play/paper", function (req, res) {
-	//we got a paper post, so run the function that plays the game
-	choice = "paper";
-	playGame();
-	//once done, return the JSON object back to the page
-	res.json(myJson);
-	console.log("paper chosen");
-});
-
-app.post("/play/scissors", function (req, res) {
-	//we got a scissors post, so run the function that plays the game
-	choice = "scissors";
-	playGame();
-	//once done, return the JSON object back to the page
-	res.json(myJson);
-	console.log("scissors chosen");
-});
-
-app.post("/play/lizard", function (req, res) {
-	//we got a lizard post, so run the function that plays the game
-	choice = "lizard";
-	playGame();
-	//once done, return the JSON object back to the page
-	res.json(myJson);
-	console.log("lizard chosen");
-});
-
-app.post("/play/spock", function (req, res) {
-	//we got a spock post, so run the function that plays the game
-	choice = "spock";
-	playGame();
-	//once done, return the JSON object back to the page
-	res.json(myJson);
-	console.log("spock chosen");
-});
 
 function playGame() {
 	//game logic goes here
